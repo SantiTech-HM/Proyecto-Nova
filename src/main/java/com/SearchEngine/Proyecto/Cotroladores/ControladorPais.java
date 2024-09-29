@@ -14,7 +14,7 @@ import java.util.Map;
 
 
 @RestController
-@RequestMapping("v2/pasis/")
+@RequestMapping("api/v2/")
 @CrossOrigin(value = "http://localhost:4200")
 public class ControladorPais {
 

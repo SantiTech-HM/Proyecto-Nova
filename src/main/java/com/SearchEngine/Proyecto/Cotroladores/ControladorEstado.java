@@ -68,6 +68,6 @@ public class ControladorEstado {
         respuesta.put("Estado elminado", Boolean.TRUE);
         return ResponseEntity.ok(respuesta);
     }
-    
+
 
 }

@@ -1,18 +1,19 @@
 package com.SearchEngine.Proyecto.Entidades;
 
-
-
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.web.bind.annotation.PutMapping;
 
-@Data
+
+@Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
-@Table(name ="estado")
-public class Estado {
+@Data
+@Table(name = "ciudad")
+public class Ciudad {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
@@ -20,15 +21,15 @@ public class Estado {
     private String nombre;
 
     @ManyToMany
-    @JoinColumn(name = "pais_id" , nullable = false)
-    private Estado estado;
+    @JoinColumn(name = "estado_id", nullable = false)
+    private Ciudad ciudad;
 
-    public Estado getEstado() {
-        return estado;
+    public Ciudad getCiudad() {
+        return ciudad;
     }
 
-    public void setEstado(Estado estado) {
-        this.estado = estado;
+    public void setCiudad(Ciudad ciudad) {
+        this.ciudad = ciudad;
     }
 
     public Long getId() {
