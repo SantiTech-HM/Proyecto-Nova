@@ -61,8 +61,9 @@ public class ControladorContinente {
             throw new ExcepcionGlobal("Id de continente no encontrado" +id);
         }
         isContinente.eliminarContinente(continente);
-        Map<String,Boolean> response = new HashMap<>();
-        response.put("Continente eliminado", Boolean.TRUE);
-        return ResponseEntity.ok(response);
+        Map<String,Boolean> respuesta = new HashMap<>();
+        respuesta.put("Continente eliminado", Boolean.TRUE);
+        return ResponseEntity.ok(respuesta);
     }
+
 }
