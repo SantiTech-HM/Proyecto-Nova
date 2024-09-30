@@ -43,11 +43,14 @@ public class ControladorCiudad {
         if (ciudad == null){
             throw new ExcepcionGlobal("Ciudad no encontrada");
         }
-        ciudad.setCiudad(ciudadObjeto.getCiudad());
+        ciudad.setEstado(ciudadObjeto.getEstado());
         ciudad.setId(ciudadObjeto.getId());
         ciudad.setNombre(ciudad.getNombre());
 
         Ciudad actualizarCiudad = isCiudad.guardarCliudad(ciudad);
+        if (actualizarCiudad == null){
+            throw new ExcepcionGlobal("Ciudad no actualizada");
+        }
         return ResponseEntity.ok(actualizarCiudad);
     }
     @DeleteMapping("ciudad/{id}")

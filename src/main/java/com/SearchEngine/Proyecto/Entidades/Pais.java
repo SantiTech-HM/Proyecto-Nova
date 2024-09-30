@@ -19,7 +19,7 @@ public class Pais {
     private Long id;
     private String nombre;
 
-    @ManyToMany
+    @ManyToOne
     @JoinColumn(name = "continente_id" , nullable = false)
     private Continente  continente;
 

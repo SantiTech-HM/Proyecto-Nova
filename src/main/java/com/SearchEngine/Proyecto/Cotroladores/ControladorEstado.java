@@ -26,7 +26,7 @@ public class ControladorEstado {
         return isEstado.listarEstados();
     }
 
-    @GetMapping("estados/{id}")
+    @GetMapping("estado/{id}")
     public ResponseEntity<Estado> buscarEstadoPorIdo(@PathVariable Long id) {
         Estado estado = isEstado.buscarEstadoPorId(id);
         if (estado == null) {
@@ -48,7 +48,7 @@ public class ControladorEstado {
         }
         estado.setId(estadoObjeto.getId());
         estado.setNombre(estadoObjeto.getNombre());
-        estado.setEstado(estadoObjeto.getEstado());
+        estado.setPais(estadoObjeto.getPais());
 
         Estado actualizarEstado = isEstado.guardarEstado(estado);
         return ResponseEntity.ok(actualizarEstado);

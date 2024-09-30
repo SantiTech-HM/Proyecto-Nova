@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@RequestMapping("api/v1")
+@RequestMapping("api/v5")
 @CrossOrigin(value = "http://localhost:4200")
 public class ControladorBarrio {
 
@@ -46,7 +46,7 @@ public class ControladorBarrio {
         if (barrio == null) {
             throw new ExcepcionGlobal("id del barrio no encontrado"+ id);
         }
-        barrio.setBarrio(barrioObjeto.getBarrio());
+        barrio.setCiudad(barrioObjeto.getCiudad());
         barrio.setId(barrioObjeto.getId());
         barrio.setNombre(barrioObjeto.getNombre());
 

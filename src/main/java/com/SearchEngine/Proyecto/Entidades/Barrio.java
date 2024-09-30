@@ -17,16 +17,16 @@ public class Barrio {
     private Long id;
     private String nombre;
 
-    @ManyToMany
+    @ManyToOne
     @JoinColumn(name = "ciudad_id", nullable = false)
-    private Barrio barrio;
+    private Ciudad ciudad;
 
-    public Barrio getBarrio() {
-        return barrio;
+    public Ciudad getCiudad() {
+        return ciudad;
     }
 
-    public void setBarrio(Barrio barrio) {
-        this.barrio = barrio;
+    public void setCiudad(Ciudad ciudad) {
+        this.ciudad = ciudad;
     }
 
     public Long getId() {

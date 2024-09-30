@@ -20,16 +20,16 @@ public class Ciudad {
     private Long id;
     private String nombre;
 
-    @ManyToMany
+    @ManyToOne
     @JoinColumn(name = "estado_id", nullable = false)
-    private Ciudad ciudad;
+    private Estado estado;
 
-    public Ciudad getCiudad() {
-        return ciudad;
+    public Estado getEstado() {
+        return estado;
     }
 
-    public void setCiudad(Ciudad ciudad) {
-        this.ciudad = ciudad;
+    public void setEstado(Estado estado) {
+        this.estado = estado;
     }
 
     public Long getId() {
