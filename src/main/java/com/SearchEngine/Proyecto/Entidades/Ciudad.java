@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.web.bind.annotation.PutMapping;
 
 
 @Entity
@@ -22,14 +21,14 @@ public class Ciudad {
 
     @ManyToOne
     @JoinColumn(name = "estado_id", nullable = false)
-    private Estado estado;
+    private Departamento departamento;
 
-    public Estado getEstado() {
-        return estado;
+    public Departamento getEstado() {
+        return departamento;
     }
 
-    public void setEstado(Estado estado) {
-        this.estado = estado;
+    public void setEstado(Departamento departamento) {
+        this.departamento = departamento;
     }
 
     public Long getId() {

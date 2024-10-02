@@ -1,7 +1,5 @@
 package com.SearchEngine.Proyecto.Entidades;
 
-
-
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -11,24 +9,25 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name ="estado")
-public class Estado {
+@Table(name = "persona")
+public class Municipio {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
     private Long id;
     private String nombre;
+    private String apellido;
 
     @ManyToOne
-    @JoinColumn(name = "pais_id" , nullable = false)
-    private Pais pais;
+    @JoinColumn(name = "barrio_id", nullable = false)
+    private Barrio barrio;
 
-    public Pais getPais() {
-        return pais;
+    public String getApellido() {
+        return apellido;
     }
 
-    public void setPais(Pais pais) {
-        this.pais = pais;
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
     }
 
     public Long getId() {
@@ -45,5 +44,13 @@ public class Estado {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public Barrio getBarrio() {
+        return barrio;
+    }
+
+    public void setBarrio(Barrio barrio) {
+        this.barrio = barrio;
     }
 }
